@@ -1,4 +1,4 @@
-## Glypher:<br />a browser extension for quick copy'n'paste of miscellaneous characters and symbols
+## Browser extension for quick copy'n'paste of miscellaneous characters
 
 ![Glypher logo](https://github.com/tripu/glypher/blob/master/img/logo-256.png?raw=true)
 
