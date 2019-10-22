@@ -1,12 +1,17 @@
-import api from '../lib/api-wrapper.js';
+import api from './lib/api-wrapper.js';
 
 var createData = {
-    type: "panel",
+    type: "normal",
     url: "../pages/list.html",
     state: 'maximized'
 };
 
-api.browserAction.onClicked.addListener(function () {
-    var creating = api.windows.create(createData);
-    // var creating = api.tabs.create({ active: true, url: '../pages/list.html' });
+const open = function () {
+    api.windows.create(createData);
+};
+
+api.commands.onCommand.addListener(function (command) {
+    if (command === "foo") {
+        open();
+    }
 });

@@ -6,16 +6,10 @@ let _found_api;
  * @param {object} root - a browser's valid API object
  */
 
-const populateAPI = root =>
-    ({
-        windows: root.windows,
-        tabs: root.tabs
-    });
-
-if ('undefined' !== typeof browser && browser.windows && browser.tabs)
-    _found_api = populateAPI(browser);
-else if ('undefined' !== typeof chrome && chrome.windows && chrome.tabs)
-    _found_api = populateAPI(chrome);
+if ('undefined' !== typeof browser && browser.windows && browser.commands)
+    _found_api = browser;
+else if ('undefined' !== typeof chrome && chrome.windows && chrome.commands)
+    _found_api = chrome;
 else
     throw new Error(`glypher/api-wrapper: ERROR: cannot detect a valid browser API!`);
 

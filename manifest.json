@@ -18,7 +18,6 @@
         "browser_style": false,
         "chrome_style": false,
         "default_title": "Glypher [Ctrl+↑ / ⌘+↑]",
-        "default_popup": "pages/glyphs.html",
         "default_icon": {
             "48": "img/logo-48.png",
             "96": "img/logo-96.png",
@@ -26,9 +25,10 @@
         }
     },
     "commands": {
-        "_execute_browser_action": {
+        "foo": {
             "suggested_key": {
-                "default": "Ctrl+Up"
+                "default": "Ctrl+Up",
+                "linux": "Ctrl+Up"
             },
             "description": "Glypher"
         }
@@ -38,5 +38,8 @@
         "chrome_style": true,
         "open_in_tab": false,
         "page": "pages/options.html"
+    },
+    "background": {
+        "page": "pages/glyphs.html"
     }
 }
