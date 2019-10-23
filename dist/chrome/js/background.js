@@ -6,21 +6,19 @@ const windowOptions = {
     state: 'maximized'
 };
 
-let promise = null;
 let popup = null;
 
+const processNewWindow = w => popup = w.id;
+
 const show = () => {
-    if (null === promise && null === popup) {
-        promise = api.windows.create(windowOptions);
+    if (null === popup) {
+        popup = 'OPENING';
+        // Include callback in case we're on Chrom*:
+        const promise = api.windows.create(windowOptions, processNewWindow);
         if (promise)
-            promise.then(
-                w => {
-                    popup = w.id;
-                    promise = null;
-                },
-                err => console.debug(err)
-            );
-    } else
+            // ie, FF:
+            promise.then(processNewWindow, err => console.debug(err));
+    } else if ('number' === typeof popup)
         api.windows.update(popup, { focused: true });
 };
 
@@ -32,7 +30,6 @@ api.commands.onCommand.addListener(command => {
 });
 
 api.windows.onRemoved.addListener(id => {
-    if (null !== popup && id === popup)
-        promise = null;
-    popup = null;
+    if (null !== popup && 'number' === typeof popup && id === popup)
+        popup = null;
 });
