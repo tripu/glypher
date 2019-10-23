@@ -21,7 +21,7 @@
 1. Click on *Load Temporary Add-on…*
 1. Select the *manifest* (`dist/firefox/manifest.json`)
 
-**Chrom*:**
+**Chrom\*:**
 
 1. Go to `chrome://extensions/`
 1. Click on *Developer mode*
