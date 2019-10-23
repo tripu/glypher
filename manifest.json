@@ -1,6 +1,7 @@
 {
     "manifest_version": 2,
     "name": "Glypher",
+    "description": "Quick copy'n'paste of miscellaneous characters and symbols",
     "version": "0.1.0",
     "homepage_url": "https://github.com/tripu/glypher",
     "applications": {
@@ -8,15 +9,12 @@
             "id": "glypher@tripu.info"
         }
     },
-    "description": "Quick copy'n'paste of miscellaneous characters and symbols",
     "icons": {
         "48": "img/logo-48.png",
         "96": "img/logo-96.png",
         "256": "img/logo-256.png"
     },
     "browser_action": {
-        "browser_style": false,
-        "chrome_style": false,
         "default_title": "Glypher [Ctrl+↑ / ⌘+↑]",
         "default_icon": {
             "48": "img/logo-48.png",
@@ -25,12 +23,11 @@
         }
     },
     "commands": {
-        "foo": {
+        "show": {
+            "description": "Glypher",
             "suggested_key": {
-                "default": "Ctrl+Up",
-                "linux": "Ctrl+Up"
-            },
-            "description": "Glypher"
+                "default": "Ctrl+Up"
+            }
         }
     },
     "options_ui": {
@@ -40,6 +37,6 @@
         "page": "pages/options.html"
     },
     "background": {
-        "page": "pages/glyphs.html"
+        "page": "pages/background.html"
     }
 }

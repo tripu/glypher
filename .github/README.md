@@ -2,10 +2,47 @@
 
 ![Glypher logo](https://github.com/tripu/glypher/blob/master/img/logo-256.png?raw=true)
 
-### Supported browsers
+### Installation
 
-* Firefox 69
-* Chrom* 77
+(For now, only as a temporary extension)
+
+* Firefox:
+  1. Go to `about:debugging#/runtime/this-firefox`
+  1. Click on *Load Temporary Add-on…*
+  1. Select the *manifest* (`dist/firefox/manifest.json`)
+* Chrom*:
+  1. Go to `chrome://extensions/`
+  1. Click on *Developer mode*
+  1. Click on *Load unpacked*
+  1. Select the *directory* (`dist/chrome/`)
+
+### Usage
+
+Bring up the glyphs pop-up by either:
+
+* Clicking the icon on the toolbar    
+  ![Icon](https://github.com/tripu/glypher/blob/master/screenshots/popup.png?raw=true)
+* Pressing `Ctrl`+`↑` (`⌘`+`↑` on Mac)
+
+Then, on the glyphs pop-up, find the symbol you need, double-click it to select, and copy to the clipboard
+
+![Screenshot](https://github.com/tripu/glypher/blob/master/screenshots/popup.png?raw=true)
+
+Press either `Esc` or `↵` to close the pop-up, and paste the glyph wherever needed.
+
+**NB:** this is *not* the intended final behaviour: usage will be seamless when we implement the ability to *move around the glyphs*
+using the cursor keys, and then use `↵` to *automatically* copy the highlighted glyph to the clipboard *and* immediately close the pop-up.
+That way, the whole operation is a handful of key strokes, and the user does not need to use the mouse at all.
+
+### Development
+
+Prerequisites: [Bash](https://www.gnu.org/software/bash/) and [jq](https://stedolan.github.io/jq/).
+
+```bash
+./build.sh
+```
+
+Then, find the resulting temporary extensions under `dist/firefox/` and `dist/chrome/`.
 
 ### Credits
 
