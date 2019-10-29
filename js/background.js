@@ -17,7 +17,9 @@ const show = () => {
         const promise = api.windows.create(windowOptions, processNewWindow);
         if (promise)
             // ie, FF:
-            promise.then(processNewWindow, err => console.debug(err));
+            promise
+                .then(processNewWindow)
+                .catch(err => console.debug(err));
     } else if ('number' === typeof popup)
         api.windows.update(popup, { focused: true });
 };
