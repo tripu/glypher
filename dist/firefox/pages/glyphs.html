@@ -3,11 +3,11 @@
 <html lang="en-GB">
 
 <head>
-    
+
     <meta charset="utf-8" />
     <title>Glypher</title>
     <script type="module" src="../js/glyphs.js"></script>
-    
+
     <style>
         * {
             box-sizing: border-box;
@@ -19,7 +19,7 @@
             color: #000000;
             text-align: center;
         }
-        
+
         aside {
             position: fixed;
             top: 0;
@@ -30,7 +30,7 @@
             opacity: .5;
             /* display: none; */
         }
-        
+
         aside div {
             position: fixed;
             top: 25vh;
@@ -38,54 +38,55 @@
             height: 50vh;
             width: 50vw;
             background-color: #ffffff;
-            box-shadow: 1rem 0 1rem #000000, 0 1rem 1rem #000000, 0 0 1rem #000000, 1rem 1rem 1rem #000000,;
+            box-shadow: 1rem 0 1rem #000000, 0 1rem 1rem #000000, 0 0 1rem #000000, 1rem 1rem 1rem #000000, ;
         }
 
         aside pre {
-            font-size: 3rem;
+            font-family: monospace;
+            font-size: 2rem;
+            text-align: left;
         }
-        
+
         h1,
         section {
             height: 10vh;
         }
-        
+
         h1 {
             font-size: 3rem;
             font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Trebuchet MS', Helvetica, Verdana, Geneva, Calibri, sans-serif;
             background-color: #ffffff;
             color: #c0c0c0;
         }
-        
+
         section {
             display: flex;
             justify-content: space-around;
             font-size: 3rem;
             font-family: Helvetica, Geneva, serif;
         }
-        
+
         div {
             padding: .5rem 1rem;
-            transition: all .25s ease-out;
+            transition: opacity .25s ease-out;
         }
-        
+
         .selected {
             filter: invert(1);
         }
-        
+
         .highlight {
             background-color: #ffff00;
             box-shadow: 0 0 1rem #000000;
             border: 0 solid #000000;
             border-radius: 1rem;
         }
-        
     </style>
-    
+
 </head>
 
 <body>
-    
+
     <main>
         <h1>Letter-like</h1>
         <section>
@@ -177,16 +178,22 @@
             <div>↵</div>
         </section>
     </main>
-    
+
     <aside>
         <div>
             <h1>Glypher</h1>
             <p>Move around:</p>
             <pre>  W       I       ↑
-                A S D   J K L   ← ↓ →</pre>
-            </div>
-        </aside>
-        
-    </body>
-    
-    </html>
+A S D   J K L   ← ↓ →</pre>
+            <p>Copy current glyph to clipboard and close pop-up:</p>
+            <pre>↵</pre>
+            <p>Add current glyp to clipboard; continue browsing:</p>
+            <pre>&lt;space&gt;</pre>
+            <p>Close pop-up:</p>
+            <pre>&lt;Esc&gt;</pre>
+        </div>
+    </aside>
+
+</body>
+
+</html>

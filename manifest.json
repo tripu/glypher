@@ -15,7 +15,7 @@
         "256": "img/logo-256.png"
     },
     "browser_action": {
-        "default_title": "Glypher [Ctrl+G / ⌘+G]",
+        "default_title": "Glypher [Alt+U / ⌥+U]",
         "default_icon": {
             "48": "img/logo-48.png",
             "96": "img/logo-96.png",
@@ -26,7 +26,7 @@
         "show": {
             "description": "Glypher",
             "suggested_key": {
-                "default": "Ctrl+G"
+                "default": "Alt+U"
             }
         }
     },

@@ -36,7 +36,7 @@ Bring up the glyphs pop-up by either:
 
 * Clicking the icon on the toolbar,    
   ![Icon](https://github.com/tripu/glypher/blob/master/screenshots/icon.png?raw=true)
-* or pressing `Ctrl`+`G` (`⌘`+`G` on Mac)
+* or pressing `Alt`+`U` (`⌥`+`U` on Mac)
 
 Then, on the glyphs pop-up, find the symbol you need, double-click it to select, and copy it to the clipboard.
 

@@ -2,8 +2,8 @@ import api from './api-wrapper.js';
 
 const windowOptions = {
     url: '../pages/glyphs.html',
-    type: 'normal',
-    state: 'maximized'
+    type: 'normal', // normal popup
+    state: 'maximized' // maximized fullscreen
 };
 
 let popup = null;
