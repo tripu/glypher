@@ -2,7 +2,7 @@
 
 *Browser extension for quick copy'n'paste of miscellaneous characters*
 
-(Psst! See the [accompanying presentation about browser extension development](https://tripu.github.io/Events/2019-10-24_Madrid-Spain_Spotahome_MadridJS-extensions/)! 👍)
+(Psst! See the [accompanying presentation about browser extension development](https://tripu.github.io/Events/doc/2019-10-24_Madrid-Spain_Spotahome_MadridJS_extensions/#1)! 👍)
 
 ![Glypher logo](https://github.com/tripu/glypher/blob/master/img/logo-256.png?raw=true)
 
