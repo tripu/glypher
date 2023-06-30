@@ -1,29 +1,46 @@
 let items = [];
 let row;
 let col;
+let pos = 0;
 let data;
 let abortWizard = false;
 
+const stopWizard = now => {
+    if (now || abortWizard) {
+        abortWizard = true;
+        const overlay = document.getElementsByTagName('aside').item(0);
+        overlay.style.display = 'none';
+        return true;
+    } else
+        return false;
+};
+
 const moveCursor = dir => {
-    const height = items.length;
-    const width = items[row].length;
     items[row][col].classList.remove('highlight');
     if ('ArrowRight' === dir || 'KeyL' === dir || 'KeyD' === dir) {
+        const width = items[row].length;
         col = (col + 1) % width;
+        pos = col / width;
     } else if ('ArrowLeft' === dir || 'KeyJ' === dir || 'KeyA' === dir) {
+        const width = items[row].length;
         col = (col + width - 1) % width;
+        pos = col / width;
     } else if ('ArrowDown' === dir || 'KeyK' === dir || 'KeyS' === dir) {
+        const height = items.length;
         row = (row + 1) % height;
-        col = 0;
+        const width = items[row].length;
+        col = Math.floor(pos * width);
     } else if ('ArrowUp' === dir || 'KeyI' === dir || 'KeyW' === dir) {
+        const height = items.length;
         row = (row + height - 1) % height;
-        col = 0;
+        const width = items[row].length;
+        col = Math.floor(pos * width);
     }
     items[row][col].classList.add('highlight');
 };
 
 const processKey = e => {
-    abortWizard = true;
+    stopWizard(true);
     if ('ArrowLeft' === e.code || 'ArrowRight' === e.code || 'ArrowUp' === e.code || 'ArrowDown' === e.code ||
         'KeyJ' === e.code || 'KeyL' === e.code || 'KeyI' === e.code || 'KeyK' === e.code ||
         'KeyA' === e.code || 'KeyD' === e.code || 'KeyW' === e.code || 'KeyS' === e.code)
@@ -53,13 +70,36 @@ const build = () => {
 };
 
 const showWizard = () => {
-    const overlay = document.getElementsByTagName('aside');
+    if (!stopWizard())
+        setTimeout(() => {
+            if (!stopWizard()) {
+                const overlay = document.getElementsByTagName('aside').item(0);
+                overlay.style.display = 'block';
+                requestAnimationFrame(() => {
+                    overlay.style.opacity = 1;
+                    setTimeout(() => {
+                        if (!stopWizard()) {
+                            moveCursor('ArrowDown');
+                            setTimeout(() => {
+                                if (!stopWizard()) {
+                                    moveCursor('ArrowRight');
+                                    setTimeout(() => {
+                                        if (!stopWizard())
+                                            moveCursor('ArrowRight');
+                                    }, 1000);
+                                }
+                            }, 1000);
+                        }
+                    }, 1000);
+                });
+            }
+        }, 1000);
 };
 
 const init = () => {
     build();
     document.addEventListener('keydown', processKey);
-    window.setTimeout(showWizard, 1000);
+    // window.setTimeout(showWizard, 1000);
 };
 
 window.addEventListener('load', init);

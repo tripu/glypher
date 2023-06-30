@@ -14,3 +14,6 @@ cd -
 
 # Chrome:
 cat manifest.json | jq 'del(.applications) | del(.options_ui.browser_style)' > dist/chrome/manifest.json
+cd dist/chrome
+zip -r -FS ../glypher-chrome-unsigned.crx *
+cd -

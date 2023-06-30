@@ -1,0 +1,6 @@
+<ol>
+<li>Press Alt+U (⌥+U on Mac) to invoke the pop-up</li>
+<li>Move around the glyphs using the cursor keys (←↑→↓)</li>
+<li>Press ↵ to copy the current glyph to the clipboard and close the pop-up at the same time</li>
+<li>Paste where needed</li>
+</ol>

@@ -60,7 +60,7 @@ Then, find the resulting temporary extensions under `dist/firefox/` and `dist/ch
 
 ## 4. Credits
 
-Copyright &copy; 2019 tripu ([`t@tripu.info`](mailto:t@tripu.info), [`https://tripu.info`](https://tripu.info/))
+Copyright &copy; 2019&ndash;2021 tripu ([`t@tripu.info`](mailto:t@tripu.info), [`https://tripu.info`](https://tripu.info/))
 
 This project is licenced [under the terms of the MIT licence](https://github.com/tripu/glypher/blob/master/LICENSE.md).
 
