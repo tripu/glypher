@@ -1,15 +1,20 @@
 {
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "Glypher",
   "description": "Quick copy'n'paste of miscellaneous characters and symbols",
   "version": "0.1.0",
   "homepage_url": "https://github.com/tripu/glypher",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "glypher@tripu.info"
+    }
+  },
   "icons": {
     "48": "img/logo-48.png",
     "96": "img/logo-96.png",
     "256": "img/logo-256.png"
   },
-  "browser_action": {
+  "action": {
     "default_title": "Glypher [Alt+U / ⌥+U]",
     "default_icon": {
       "48": "img/logo-48.png",

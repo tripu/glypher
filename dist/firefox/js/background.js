@@ -24,7 +24,7 @@ const show = () => {
         api.windows.update(popup, { focused: true });
 };
 
-api.browserAction.onClicked.addListener(show);
+api.action.onClicked.addListener(show);
 
 api.commands.onCommand.addListener(command => {
     if (command === 'show')

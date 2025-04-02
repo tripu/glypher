@@ -6,7 +6,7 @@ let _found_api;
  * @param {object} root - a browser's valid API object
  */
 
-if ('undefined' !== typeof browser && browser.windows && browser.commands && browser.browserAction)
+if ('undefined' !== typeof browser && browser.windows && browser.commands && browser.action)
     _found_api = browser;
 else if ('undefined' !== typeof chrome && chrome.windows && chrome.commands && chrome.browserAction)
     _found_api = chrome;
