@@ -35,7 +35,8 @@
     "page": "pages/options.html"
   },
   "background": {
-    "page": "pages/background.html"
+    "service_worker": "js/background.js",
+    "type": "module"
   },
   "permissions": [
     "clipboardWrite"

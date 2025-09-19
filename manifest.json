@@ -31,12 +31,12 @@
         }
     },
     "options_ui": {
-        "chrome_style": true,
         "open_in_tab": false,
         "page": "pages/options.html"
     },
     "background": {
-        "page": "pages/background.html"
+        "service_worker": "js/background.js",
+        "type": "module"
     },
     "permissions": [
         "clipboardWrite"

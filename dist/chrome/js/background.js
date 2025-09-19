@@ -1,7 +1,9 @@
 import api from './api-wrapper.js';
 
 const windowOptions = {
-    url: '../pages/glyphs.html',
+    url: api.runtime && api.runtime.getURL
+        ? api.runtime.getURL('pages/glyphs.html')
+        : '../pages/glyphs.html',
     type: 'normal', // normal popup
     state: 'maximized' // maximized fullscreen
 };
